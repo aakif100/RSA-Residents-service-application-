@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/users.css">
+    <title>Users</title>
+</head>
+<body>
+
+
+    <h1> User details : </h1>
+    <br>
+    <a href="http://localhost:8080/users/new"> <button>Add New User </button> </a>
+    <a href="http://localhost:8080/"> <button>go to home page</button></a>
+
+                <table border = " 1 ">
+                
+                <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                
+                </tr>
+                <tr>
+                <% for(let dataset of data) { %>
+                
+                
+                <td> <%= dataset.id %> </td>
+                <td> <%= dataset.username %> </td>
+                <td> <%= dataset.email %> </td>
+                <td> <form method ="get" action="/users/<%= dataset.id %>/edit" > <button> edit content </button> </form></td>
+                <td> <form method ="get" action="/users/<%= dataset.id %>/delete" > <button> Delete Data </button> </form></td>
+
+                </tr>
+                
+                <% } %>
+                
+                
+                
+                </table>
+                
+                
+                <!-- <p></p> -->
+                
+                
+
+
+</body>
+</html>
