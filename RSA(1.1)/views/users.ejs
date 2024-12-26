@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/users.css">
+    <title>Users</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header fade-in">
+            <h1>Resident Database</h1>
+            <div class="actions">
+                <a href="http://localhost:8080/users/new"><button class="btn">Add New Resident</button></a>
+                <a href="http://localhost:8080/"><button class="btn">Home</button></a>
+            </div>
+        </div>
+
+        <div class="table-container glass fade-in">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                <% for(let dataset of data) { %>
+                <tr>
+                    <td><%= dataset.id %></td>
+                    <td><%= dataset.username %></td>
+                    <td><%= dataset.email %></td>
+                    <td>
+                        <form style="display: inline" method="get" action="/users/<%= dataset.id %>/edit">
+                            <button class="action-btn">Edit</button>
+                        </form>
+                        <form style="display: inline" method="get" action="/users/<%= dataset.id %>/delete">
+                            <button class="action-btn delete-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

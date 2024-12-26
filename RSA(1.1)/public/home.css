@@ -1,0 +1,69 @@
+    body {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.home-container {
+    text-align: center;
+    padding: 3rem;
+    max-width: 800px;
+    width: 100%;
+    transition: opacity 1.5s ease-out, filter 1.5s ease-out;
+    opacity: 1;
+    filter: blur(0);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.btn {
+    font-size: 1.2rem;
+}
+
+/* Loader and Blur Animation */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.loader-blur {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    transition: opacity 1.5s ease-out;
+}
+
+body.loading .home-container {
+    opacity: 0;
+    filter: blur(10px);
+}
+
+body:not(.loading) .loader-blur {
+    opacity: 0;
+}
+
+/* Ensure the animation starts after page load */
+@media (prefers-reduced-motion: no-preference) {
+    .home-container {
+        will-change: opacity, filter;
+    }
+}

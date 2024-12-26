@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/forms.css">
+    <title>Edit Resident</title>
+</head>
+<body>
+    <div class="form-container glass fade-in">
+        <h1>Edit Resident</h1>
+        <p class="subtitle">Editing profile for <%= info.email %></p>
+        
+        <form action="/users/<%= info.id %>?_method=PATCH" method="post" class="styled-form">
+            <div class="form-group">
+                <label for="username">New Username</label>
+                <textarea name="username" id="username" rows="2"><%= info.username %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" name="password" id="password" required placeholder="Enter your password to confirm">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn">Save Changes</button>
+                <a href="/users" class="btn secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
