@@ -20,7 +20,7 @@ RSA (Residents Service Application) is a secure web application designed to stre
 
 - **Backend**: [Express.js](https://expressjs.com/)
 - **Templating Engine**: [EJS](https://ejs.co/)
-- **Database**: SQL (connected via [sql2](https://www.npmjs.com/package/sql2))
+- **Database**: SQL (connected via [sql2](https://www.npmjs.com/package/mysql2))
 - **Testing Data**: [Faker.js](https://fakerjs.dev/)
 
 ## NOTE :
