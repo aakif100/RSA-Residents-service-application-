@@ -25,8 +25,13 @@ RSA (Residents Service Application) is a secure web application designed to stre
 
 ## NOTE :
 DB_HOST=your-database-host
+<br>
 DB_USER=your-database-username
+<br>
+
 DB_PASSWORD=your-database-password
+<br>
+
 DB_NAME=your-database-name
 
 ## Installation and Setup
